@@ -50,11 +50,11 @@ def calculate(radius):
 
     # When y % 2 == 1
     tileDict.clear()
-    tile((0, 0), radius)
-    del tileDict[str((0, 0))]
+    tile((0, 1), radius)
+    del tileDict[str((0, 1))]
     ypositions = []
     for _tile in tileDict:
-        ypositions.append(tileDict[_tile].pos)
+        ypositions.append((tileDict[_tile].pos[0], tileDict[_tile].pos[1]-1, tileDict[_tile].energy))
 
     return [positions, ypositions]
 
