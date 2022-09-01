@@ -1,0 +1,16 @@
+= {
+{    ["Level"] = 1,    ["HP"] = 15000,    ["Attack"] = 850,    ["Def"] = 260,    ["Sp. Attack"] = 100,    ["Sp. Def"] = 180,    ["Crit Rate"] = 0,    ["CDR"] = 0,    ["Lifesteal"] = 0,},
+{    ["Level"] = 2,    ["HP"] = 15535,    ["Attack"] = 930,    ["Def"] = 295,    ["Sp. Attack"] = 115,    ["Sp. Def"] = 205,    ["Crit Rate"] = 0,    ["CDR"] = 0,    ["Lifesteal"] = 0,},
+{    ["Level"] = 3,    ["HP"] = 16120,    ["Attack"] = 1020,    ["Def"] = 335,    ["Sp. Attack"] = 135,    ["Sp. Def"] = 235,    ["Crit Rate"] = 0,    ["CDR"] = 0,    ["Lifesteal"] = 0,},
+{    ["Level"] = 4,    ["HP"] = 16765,    ["Attack"] = 1115,    ["Def"] = 380,    ["Sp. Attack"] = 155,    ["Sp. Def"] = 265,    ["Crit Rate"] = 0,    ["CDR"] = 0,    ["Lifesteal"] = 0,},
+{    ["Level"] = 5,    ["HP"] = 17475,    ["Attack"] = 1220,    ["Def"] = 430,    ["Sp. Attack"] = 180,    ["Sp. Def"] = 300,    ["Crit Rate"] = 5,    ["CDR"] = 10,    ["Lifesteal"] = 0,},
+{    ["Level"] = 6,    ["HP"] = 18255,    ["Attack"] = 1335,    ["Def"] = 485,    ["Sp. Attack"] = 205,    ["Sp. Def"] = 340,    ["Crit Rate"] = 5,    ["CDR"] = 10,    ["Lifesteal"] = 0,},
+{    ["Level"] = 7,    ["HP"] = 19115,    ["Attack"] = 1465,    ["Def"] = 545,    ["Sp. Attack"] = 235,    ["Sp. Def"] = 380,    ["Crit Rate"] = 5,    ["CDR"] = 10,    ["Lifesteal"] = 0,},
+{    ["Level"] = 8,    ["HP"] = 20060,    ["Attack"] = 1605,    ["Def"] = 610,    ["Sp. Attack"] = 265,    ["Sp. Def"] = 425,    ["Crit Rate"] = 5,    ["CDR"] = 10,    ["Lifesteal"] = 0,},
+{    ["Level"] = 9,    ["HP"] = 21105,    ["Attack"] = 1760,    ["Def"] = 680,    ["Sp. Attack"] = 300,    ["Sp. Def"] = 475,    ["Crit Rate"] = 10,    ["CDR"] = 20,    ["Lifesteal"] = 0,},
+{    ["Level"] = 10,    ["HP"] = 22255,    ["Attack"] = 1935,    ["Def"] = 760,    ["Sp. Attack"] = 340,    ["Sp. Def"] = 530,    ["Crit Rate"] = 10,    ["CDR"] = 20,    ["Lifesteal"] = 0,},
+{    ["Level"] = 11,    ["HP"] = 23520,    ["Attack"] = 2125,    ["Def"] = 850,    ["Sp. Attack"] = 380,    ["Sp. Def"] = 590,    ["Crit Rate"] = 10,    ["CDR"] = 20,    ["Lifesteal"] = 0,},
+{    ["Level"] = 12,    ["HP"] = 24915,    ["Attack"] = 2335,    ["Def"] = 945,    ["Sp. Attack"] = 425,    ["Sp. Def"] = 655,    ["Crit Rate"] = 10,    ["CDR"] = 20,    ["Lifesteal"] = 0,},
+{    ["Level"] = 13,    ["HP"] = 26450,    ["Attack"] = 2565,    ["Def"] = 1050,    ["Sp. Attack"] = 475,    ["Sp. Def"] = 730,    ["Crit Rate"] = 10,    ["CDR"] = 20,    ["Lifesteal"] = 0,},
+{    ["Level"] = 14,    ["HP"] = 28140,    ["Attack"] = 2820,    ["Def"] = 1165,    ["Sp. Attack"] = 530,    ["Sp. Def"] = 810,    ["Crit Rate"] = 10,    ["CDR"] = 20,    ["Lifesteal"] = 0,},
+{    ["Level"] = 15,    ["HP"] = 30000,    ["Attack"] = 3100,    ["Def"] = 1295,    ["Sp. Attack"] = 590,    ["Sp. Def"] = 900,    ["Crit Rate"] = 10,    ["CDR"] = 20,    ["Lifesteal"] = 0,},}
