@@ -37,7 +37,7 @@ class tile:
                     tile(npos, energy-1)
 
     def tap(self, tile):
-        self.energy = max(tile.energy, self.energy)
+        self.energy = max(tile.energy-1, self.energy)
 
 def calculate(radius):
     tileDict.clear()
@@ -46,7 +46,7 @@ def calculate(radius):
     
     positions = []
     for _tile in tileDict:
-        positions.append(tileDict[_tile].pos)
+        positions.append((tileDict[_tile].pos[0], tileDict[_tile].pos[1], tileDict[_tile].energy))
 
     # When y % 2 == 1
     tileDict.clear()
