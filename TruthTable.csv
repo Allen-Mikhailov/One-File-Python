@@ -1,0 +1,9 @@
+,a,b,c,a && b || c
+0,True,True,True,True
+1,False,True,True,True
+2,True,False,True,True
+3,False,False,True,True
+4,True,True,False,True
+5,False,True,False,False
+6,True,False,False,False
+7,False,False,False,False
