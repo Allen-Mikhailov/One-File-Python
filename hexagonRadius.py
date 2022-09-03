@@ -31,13 +31,13 @@ class tile:
 
         if energy > 0:
             for npos in getAround(pos[0], pos[1]):
-                if npos in tileDict:
+                if str(npos) in tileDict:
                     tileDict[str(npos)].tap(self)
                 else:
                     tile(npos, energy-1)
 
     def tap(self, tile):
-        self.energy = max(tile.energy-1, self.energy)
+        self.energy = self.energy #max(tile.energy-1, self.energy)
 
 def calculate(radius):
     tileDict.clear()
