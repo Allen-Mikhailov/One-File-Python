@@ -80,8 +80,12 @@ def toPart(rawParts):
             break
 
     if hasOpp:
-        rawParts = toPart(parts)
+        parts = toPart(parts)
         pass
+
+    if (len(parts) == 1):
+        return parts[0]
+
 
     return parts
         
