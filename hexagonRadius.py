@@ -31,13 +31,14 @@ class tile:
 
         if energy > 0:
             for npos in getAround(pos[0], pos[1]):
-                if npos in tileDict:
+                if str(npos) in tileDict:
                     tileDict[str(npos)].tap(self)
                 else:
                     tile(npos, energy-1)
 
-    def tap(self, tile):
-        self.energy = max(tile.energy-1, self.energy)
+    def tap(self, ctile):
+        if ctile.energy-1 > self.energy:
+            tile(self.pos, ctile.energy-1)
 
 def calculate(radius):
     tileDict.clear()
@@ -46,7 +47,7 @@ def calculate(radius):
     
     positions = []
     for _tile in tileDict:
-        positions.append((tileDict[_tile].pos[0], tileDict[_tile].pos[1], tileDict[_tile].energy))
+        positions.append((tileDict[_tile].pos[0], tileDict[_tile].pos[1], radius-tileDict[_tile].energy))
 
     # When y % 2 == 1
     tileDict.clear()
@@ -54,13 +55,13 @@ def calculate(radius):
     del tileDict[str((0, 1))]
     ypositions = []
     for _tile in tileDict:
-        ypositions.append((tileDict[_tile].pos[0], tileDict[_tile].pos[1]-1, tileDict[_tile].energy))
+        ypositions.append((tileDict[_tile].pos[0], tileDict[_tile].pos[1]-1, radius-tileDict[_tile].energy))
 
     return [positions, ypositions]
 
 file = open("./hexagons.txt", "w")
 file.write("{\n")
-maxsize = 8
+maxsize = 30
 for i in range(1, maxsize+1):
     _string = str(calculate(i)).replace("(", "{").replace(")", "}").replace("[", "{").replace("]", "}")
     file.write(_string+",\n")
