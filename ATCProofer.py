@@ -90,8 +90,21 @@ def getProof(planes):
         print(" = {:.2f}nm".format(numpy.sum(distances)))
         print("Distance from reference point = | {:.2f}nm - {:.2f}nm | = {:.2f}nm".format(numpy.sum(distances), 
         plane.ModDistance, plane.calcModDiff()))
+        print()
+
+    # Compare Distance
+    print()
+    print("Comparing Distances")
+    for i in range(len(planes)-1):
+        p1 = planes[i]
+        for j in range(i+1, len(planes)):
+            p2 = planes[j]
+            print("{} to {} = | {:.2f}nm - {:.2f}nm | = {:.2f}nm".format(p1.name, p2.name, p1.calcModDiff(), p2.calcModDiff(), abs(p1.calcModDiff() - p2.calcModDiff())))
+
 
 redPlane = Plane("Red", 36, 30, "600 at 0:0")
+bluePlane = Plane("Blue", 34, 20, "600 at 0:0")
+greenPlane = Plane("Green", 34, 25, "600 at 0:0")
 
 # print(redPlane.calcModDiff())
-getProof([redPlane])
+getProof([redPlane, bluePlane, greenPlane])
