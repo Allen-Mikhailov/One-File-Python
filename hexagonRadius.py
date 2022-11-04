@@ -61,7 +61,7 @@ def calculate(radius):
 
 file = open("./hexagons.txt", "w")
 file.write("{\n")
-maxsize = 30
+maxsize = 100
 for i in range(1, maxsize+1):
     _string = str(calculate(i)).replace("(", "{").replace(")", "}").replace("[", "{").replace("]", "}")
     file.write(_string+",\n")
