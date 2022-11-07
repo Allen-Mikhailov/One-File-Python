@@ -1,5 +1,7 @@
 import math
 import numpy
+from colorama import Fore
+from colorama import Style
 
 targetTime = 216
 
@@ -32,9 +34,9 @@ class Plane:
         return speeds, times, distances
 
 
-    def __init__(self, name, EndDistance, ModDistance, speedString):
+    def __init__(self, color, name, ModDistance, speedString):
+        self.color = color
         self.name = name
-        self.EndDistance = EndDistance
         self.speedString = speedString
         self.ModDistance = ModDistance
 
@@ -67,9 +69,8 @@ def getProof(planes):
 
         speeds, times, distances = plane.parseSpeedString()
 
-        print(plane.name+":")
-        print("Distance to target is "+str(plane.EndDistance)
-            +"nm and Distance to the reference point is "+str(plane.ModDistance)+"nm")
+        print(f"{plane.color}{plane.name}:")
+        print("Distance to the reference point is "+str(plane.ModDistance)+"nm")
 
         routeOutput = "Starting at "+strSpeed(speeds[0])
         for j in range(1, len(speeds)):
@@ -90,7 +91,7 @@ def getProof(planes):
         print(" = {:.2f}nm".format(numpy.sum(distances)))
         print("Distance from reference point = | {:.2f}nm - {:.2f}nm | = {:.2f}nm".format(numpy.sum(distances), 
         plane.ModDistance, plane.calcModDiff()))
-        print()
+        print(Style.RESET_ALL)
 
     # Compare Distance
     print()
@@ -99,12 +100,14 @@ def getProof(planes):
         p1 = planes[i]
         for j in range(i+1, len(planes)):
             p2 = planes[j]
-            print("{} to {} = | {:.2f}nm - {:.2f}nm | = {:.2f}nm".format(p1.name, p2.name, p1.calcModDiff(), p2.calcModDiff(), abs(p1.calcModDiff() - p2.calcModDiff())))
+            p1Dif = p1.calcModDiff()
+            p2Dif = p2.calcModDiff()
+            print(f"{p1.color}{p1.name}{Style.RESET_ALL} to {p2.color}{p2.name}{Style.RESET_ALL} = | {p1.color}{p1Dif:.2f}nm{Style.RESET_ALL} - {p2.color}{p2Dif:.2f}nm {Style.RESET_ALL}| = {abs(p1Dif - p2Dif):.2f}nm")
 
-
-redPlane = Plane("Red", 36, 30, "600 at 0:0")
-bluePlane = Plane("Blue", 34, 20, "600 at 0:0")
-greenPlane = Plane("Green", 34, 25, "600 at 0:0")
+bluePlane = Plane(Fore.BLUE, "AAL12", 32, "600 at 0:0")
+greenPlane = Plane(Fore.GREEN, "DAL88", 35, "600 at 0:0")
+redPlane = Plane(Fore.RED, "UAL74", 38, "600 at 0:0")
+targetTime = 3*60 + 36
 
 # print(redPlane.calcModDiff())
 getProof([redPlane, bluePlane, greenPlane])
