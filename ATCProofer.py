@@ -81,8 +81,8 @@ def getProof(planes):
         # Distance calc
 
         def getCalcString(j):
-            final = "{:.2f}".format(distances[j])
-            return str(speeds[j]) + " * ( "+str(plane.getTime(j+1)) + " - " + str(plane.getTime(j)) + " ) / 3600 = " + final
+            final = f"{distances[j]:.2f}"
+            return str(speeds[j]) + " * ("+str(plane.getTime(j+1)) + " - " + str(plane.getTime(j)) + ") / 3600 = " + final
 
         print("Calculation Distance Travelled: ")
         print(getCalcString(0))
@@ -102,11 +102,13 @@ def getProof(planes):
             p2 = planes[j]
             p1Dif = p1.calcModDiff()
             p2Dif = p2.calcModDiff()
-            print(f"{p1.color}{p1.name}{Style.RESET_ALL} to {p2.color}{p2.name}{Style.RESET_ALL} = | {p1.color}{p1Dif:.2f}nm{Style.RESET_ALL} - {p2.color}{p2Dif:.2f}nm {Style.RESET_ALL}| = {abs(p1Dif - p2Dif):.2f}nm")
+            part1 = f"{p1.color}{p1.name}{Style.RESET_ALL} to {p2.color}{p2.name}{Style.RESET_ALL}"
+            part2 = f" = | {p1.color}{p1Dif:.2f}nm{Style.RESET_ALL} - {p2.color}{p2Dif:.2f}nm {Style.RESET_ALL}| = {abs(p1Dif - p2Dif):.2f}nm"
+            print(f"{part1}{part2}")
 
-bluePlane = Plane(Fore.BLUE, "AAL12", 32, "600 at 0:0")
-greenPlane = Plane(Fore.GREEN, "DAL88", 35, "600 at 0:0")
-redPlane = Plane(Fore.RED, "UAL74", 38, "600 at 0:0")
+bluePlane = Plane(Fore.BLUE, "Red AAL12", 32, "600 at 0:0")
+greenPlane = Plane(Fore.GREEN, "Green DAL88", 35, "600 at 0:0")
+redPlane = Plane(Fore.RED, "Blue UAL74", 38, "600 at 0:0")
 targetTime = 3*60 + 36
 
 # print(redPlane.calcModDiff())
