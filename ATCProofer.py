@@ -74,7 +74,7 @@ def getProof(planes):
 
         routeOutput = "Starting at "+strSpeed(speeds[0])
         for j in range(1, len(speeds)):
-            routeOutput += ", then at " + strTime(times[j]) + " changes to " + strSpeed(speeds[j])
+            routeOutput += ", then at " + strTime(plane.getTime(j)) + " changes to " + strSpeed(speeds[j])
 
         print(routeOutput)
 
@@ -106,10 +106,12 @@ def getProof(planes):
             part2 = f" = | {p1.color}{p1Dif:.2f}nm{Style.RESET_ALL} - {p2.color}{p2Dif:.2f}nm {Style.RESET_ALL}| = {abs(p1Dif - p2Dif):.2f}nm"
             print(f"{part1}{part2}")
 
-bluePlane = Plane(Fore.BLUE, "Red AAL12", 32, "600 at 0:0")
-greenPlane = Plane(Fore.GREEN, "Green DAL88", 35, "600 at 0:0")
-redPlane = Plane(Fore.RED, "Blue UAL74", 38, "600 at 0:0")
-targetTime = 3*60 + 36
+bluePlane   = Plane(Fore.BLUE,   "Blue AAL12",  29, "540 at 0:0 600 at 2:0")
+greenPlane  = Plane(Fore.GREEN,  "Green DAL88", 34, "600 at 0:0")
+redPlane    = Plane(Fore.RED,    "Red UAL74",   37, "600 at 0:0")
+yellowPlane = Plane(Fore.YELLOW, "Yellow SWA3", 40, "600 at 0:0")
+purplePlane = Plane(Fore.MAGENTA, "Purple VRD36", 28, "600 at 0:0")
+targetTime = 4*60 + 0
 
 # print(redPlane.calcModDiff())
-getProof([redPlane, bluePlane, greenPlane])
+getProof([bluePlane, greenPlane, redPlane, yellowPlane, purplePlane])
